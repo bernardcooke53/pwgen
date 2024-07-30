@@ -1,0 +1,33 @@
+[project]
+name = "pwgen"
+description = "Utility to generate passwords"
+dynamic = ["version"]
+authors = [
+    { name = "Bernard Cooke", email = "bernard.cooke@arcturisdata.com" }
+]
+dependencies = [
+    "typer>=0.12.3",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+classifiers = ["Private :: Do Not Upload"]
+
+[project.scripts]
+"pwgen" = "pwgen.__main__:app"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = []
+
+[tool.hatch.version]
+path = "src/pwgen/__init__.py"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pwgen"]
