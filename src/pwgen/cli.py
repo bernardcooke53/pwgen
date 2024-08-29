@@ -53,7 +53,7 @@ def main(
     if excluded_chars:
         alphabet = "".join(set(alphabet) - excluded_chars)
 
-    typer.echo("".join(secrets.choice(alphabet) for _ in range(length)))
+    typer.echo("".join(secrets.choice(alphabet) for _ in range(length)), nl=False)
 
 
 if __name__ == "__main__":
